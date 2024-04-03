@@ -1,0 +1,16 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Productos destacados</h2>
+<br/>
+<div class="row">
+    @foreach (Product product in Model)
+    {
+        <div class="col-md-4">
+            <!-- Renderizar la vista parcial para cada producto -->
+        @await Html.PartialAsync("_ProductPartial", product)
+        </div>
+    }
+</div>
